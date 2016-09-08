@@ -1,0 +1,25 @@
+---
+title: "BagOfWords"
+author: "Abby Smith (als1)"
+date: "Sunday, September 04, 2016"
+output: html_document
+---
+
+
+```{r}
+library(readr)
+text_example<- read_file('0170797.txt')
+```
+
+
+##Exercise 1
+
+```{r}
+tokenize<-function(text_file){
+  text<-read_file(text_file)
+  strsplit(text, " ")[[1]]
+}
+
+#tokenize(text_example)
+```
+
