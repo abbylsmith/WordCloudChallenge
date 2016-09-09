@@ -1,0 +1,36 @@
+##LEVEL 1
+git checkout 640273807
+
+##LEVEL 2
+git checkout bug
+
+##LEVEL 3
+git blame cool.cpp
+git checkout LinusTorvalds2014
+
+##LEVEL 4
+start .gitignore
+
+##LEVEL 5
+git checkout tree
+
+##LEVEL 6
+./outputclue.sh nextclue_input.cpp
+
+##LEVEL 7: ?!! It told me to go checkout mouse
+
+##LEVEL 8
+git checkout mouse
+git diff bug -- remember
+
+##LEVEL 9
+
+git tag something Henry
+git tag -d Henry
+git checkout Henry
+
+
+##LEVEL 10
+git remote -v
+git remote add upstream https://github.com/drami025/git-game.git
+git remote -v
