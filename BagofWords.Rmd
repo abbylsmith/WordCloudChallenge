@@ -1,0 +1,32 @@
+---
+title: "BagOfWords"
+author: "Abby Smith (als1)"
+date: "Sunday, September 04, 2016"
+output: html_document
+---
+TODO: Add comments, test cases
+
+```{r}
+#loading library that has read_file command we use to import the text files
+library(readr)
+
+#some test cases for our function 
+text_example1<- '0170797.txt'
+text_example2<-'0332083.txt'
+text_example3<-'1639809.txt'
+```
+
+
+##Exercise 1
+
+```{r}
+tokenize<-function(text_file){
+  text<-read_file(text_file) #reads into a string
+  strsplit(text, " ")[[1]] #input=string, will return a list
+}
+
+#tokenize(text_example1)
+#tokenize(text_example2)
+#tokenize(text_example3)
+```
+
