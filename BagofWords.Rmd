@@ -4,8 +4,6 @@ author: "Abby Smith (als1)"
 date: "Sunday, September 04, 2016"
 output: html_document
 ---
-TODO: Add comments, test cases
-
 ```{r}
 #loading library that has read_file command we use to import the text files
 library(readr)
