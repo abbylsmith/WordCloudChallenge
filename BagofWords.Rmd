@@ -10,20 +10,46 @@ TODO: Add comments, test cases
 #loading library that has read_file command we use to import the text files
 library(readr)
 
-#some test cases for our function 
-text_example1<- '0170797.txt'
-text_example2<-'0332083.txt'
-text_example3<-'1639809.txt'
+#loading library used to write some test cases
+library(testthat)
 ```
 
+
+```{r}
+#test code
+
+#punctation, spaces, normal, empty document
+
+test_that("handles punctuation properly", {
+  expect_equal(length(tokenize("a.bag * of,words")), 3)
+  expect_equal(length(tokenize("a 93./1")), 2)
+})
+
+test_that("handles empty document/strings", {
+  expect_equal(length(tokenize("")), 0)
+})
+
+test_that("handles varying length of spaces", {
+  expect_equal(length(tokenize("a             b     c")), 3)
+})
+
+#Note that I've included a few text files that I have run with my below function.
+```
 
 ##Exercise 1
 
 ```{r}
-tokenize<-function(text_file){
-  text<-read_file(text_file) #reads into a string
-  strsplit(text, " ")[[1]] #input=string, will return a list
+tokenize <- function(text){
+  if (file.exists(text)) { #check if the file exists in your directory
+    text.input <- read_file(text) #reads into a string
+  }
+  else{
+    text.input <- text 
+  }
+  strsplit(text.input, split= "\\s+")[[1]] #input=string, will return a list. We will split using                                           '\\s+', which allows for multiple spaces
 }
+
+tokenize('0170797.txt')
 
 #tokenize(text_example1)
 #tokenize(text_example2)
