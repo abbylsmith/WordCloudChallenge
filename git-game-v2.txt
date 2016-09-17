@@ -1,0 +1,39 @@
+Git-game v2
+Abby Smith
+
+
+##LEVEL 1
+git log
+git checkout 6861
+
+##LEVEL 2
+git show 16a28decee95df
+git checkout snowden
+
+##LEVEL 3
+git shortlog
+git checkout anon
+
+##LEVEL 4
+git describe 
+git checkout return
+
+
+##LEVEL 5
+git log --pretty=format:"%T %s" | grep 3331d0b
+git checkout SIGPOLL
+
+##LEVEL 6
+git submodule init
+git submodule update
+cd Java
+
+##LEVEL 7
+git log -p | grep hint
+git checkout cherry
+
+##LEVEL 8
+git cherry-pick arachnid~4 insect~3
+
+##LEVEL 9 
+git bisect
