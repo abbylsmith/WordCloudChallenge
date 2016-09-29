@@ -15,7 +15,7 @@ test_that("allows for there be a 0 length vectr", {
 })
 
 
-test_that("mean of output= mean", {
+test_that("the function returns normal random numbers with the specified mean", {
   #when looking at the actual output we need to set the seed
   expect_equal({set.seed(500)
     mean(rnorm(50, 25, 4))}, 25, tol = .05)
@@ -23,15 +23,19 @@ test_that("mean of output= mean", {
     mean(rnorm(50,-4))}, -4, tol = .05)
   expect_equal({set.seed(500)
     mean(rnorm(50))}, 0, tol = .05)
-  expect_warning(expect_equal(length(rnorm(30, NA)), 30)) #expect a warning but also recognizing that it will generate list of NAS, length=n
 })
 
-test_that("standard deviation of output=std", {
-  expect_equal({set.seed(500)
-    sd(rnorm(200))}, 1, tol=.05)
+test_that("incorrect inputs for mean and standard deviation will throw a warning, but not an error",{
+  expect_warning(expect_equal(length(rnorm(30, NA)), 30)) # will generate list of NAS, length=n
   expect_warning({set.seed(500)
     rnorm(40,0, -4)}) #NAs produced when std deviation is below 0
-  expect_warning(expect_equal(length(rnorm(30, 2, NA)), 30)) #expect a warning but also recognizing that it will generate list of NAS, length=n
+  expect_warning(expect_equal(length(rnorm(30, 2, NA)), 30)) #will generate list of NAS, length=n
+})
+
+test_that("the function returns normal random numbers with a specified variance", {
+  expect_equal({set.seed(500)
+    sd(rnorm(200))}, 1, tol=.05)
+
 })
 
 test_that("t distribution does not meet tests", {
